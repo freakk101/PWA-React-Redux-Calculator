@@ -1,33 +1,183 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+ 
+input:focus{
+  outline-offset: 0px;
+  outline: 0px;
+ }
+ input {
+   border: 0px;
+ }
+
+.header {
+  background-image: linear-gradient(180deg, #8800FD 0%, #5000FB 100%);
+  box-shadow: 0 2px 4px 0 rgba(179, 179, 179, 0.5);
+  display: flex;
+ /* width: 360px; change this in media query */ 
+  height: 55px;
+  justify-content: center;
+  align-content: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+ .header > span {
+  color: #FFFFFF;
+  font-family: "Nunito Sans",  sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 55px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.field {
   display: flex;
   flex-direction: column;
+  position:relative; 
+  margin:35px 0; 
   align-items: center;
+}
+
+
+
+.op_bg {
+  background-image: linear-gradient(180deg, #8800FD 0%, #5000FB 100%);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px 0 rgba(179, 179, 179, 0.5);
+  width: 82px;
+  height: 65px;
+}
+.symbol {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+
+
+.sign {
+  color: #FFFFFF;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 43px;
+}
+
+.operator {
+  color: #FFFFFF;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.functions{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 25px;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.functions > :first-child {
+  margin-right: 35px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.active_op_bg {
+  background-image: linear-gradient(180deg, #5B247A 0%, #65799B 100%);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px 0 rgba(179, 179, 179, 0.5);
+  width: 82px;
+  height: 65px;
 }
+
+.group 			  { 
+  position:relative; 
+  margin-bottom:24px; 
+}
+input 				{
+  font-size:18px;
+  padding:3px 10px 7px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom: 1px solid #5800FB;
+}
+input:focus 		{ outline:none; }
+
+.result_title {
+  color: #A2A2A2;
+  font-family: "Nunito Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  margin: 0 20px 40px;
+}
+
+.result_value {
+    color: #515151;
+    font-family: "Nunito Sans";
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: left;
+}
+
+
+
+/* LABEL ======================================= */
+label 				 {
+  color: #CDCDCD;
+  font-family: 'Nunito Sans';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  position:absolute;
+  pointer-events:none;
+  /* left:3px; */
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~label		{
+  left: 3px;
+  top:-10px;
+  font-size:10px;
+  color:#CDCDCD;
+}
+
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+} */
+
+/* ANIMATIONS ================
+ @-webkit-keyframes inputHighlighter {
+	from { background:#5800FB; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5800FB; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5800FB; }
+  to 	{ width:0; background:transparent; }
+}  */
